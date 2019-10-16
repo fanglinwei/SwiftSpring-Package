@@ -1,2 +1,3 @@
-# SwiftSpring-Package
-SwiftSpring-Package
+# SwiftSpring
+
+A description of this package.
