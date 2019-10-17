@@ -1,3 +1,4 @@
+
 # Spring - Animation
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
@@ -31,6 +32,7 @@
 - [x] Based on UIViewAnimation.
 - [x] No code intrusion.
 
+
 ## Install
 
 **CocoaPods - Podfile**
@@ -39,7 +41,7 @@
 pod 'SwiftSpring'
 ```
 
-### Swift Package Manager
+**Swift Package Manager**
 
 You can use The  [Swift Package Manager](https://swift.org/package-manager) to install SwiftSpring by adding the proper description to your Package.swift file:
 
@@ -114,9 +116,7 @@ zoomIn
 zoomOut
 flash
 ```
-
 ### Curve
-
 ```swift
 spring
 linear
@@ -136,7 +136,6 @@ easeInBack, easeOutBack, easeInOutBack
 ```
 
 ### Properties
-
 ```swift
 force
 duration
@@ -162,6 +161,8 @@ alpha
 If you have the need for a specific feature that you want implemented or if you experienced a bug, please open an issue.
 If you extended the functionality of Spring yourself and want others to use it too, please submit a pull request.
 
+
 ## License
 
 Spring is under MIT license. See the [LICENSE](LICENSE) file for more info.
+
