@@ -30,30 +30,30 @@ extension Solver {
 
 extension Solver {
     
-    private var animation: Animation.Preset { return config.animation}
-    private var force: CGFloat { return config.force }
-    private var delay: CGFloat { return config.delay }
-    private var duration: TimeInterval { return config.duration }
-    private var damping: CGFloat { return config.damping }
-    private var velocity: CGFloat { return config.velocity }
-    private var repeatCount: Float { return config.repeatCount }
-    private var x: CGFloat { return config.x }
-    private var y: CGFloat { return config.y }
-    private var scaleX: CGFloat { return config.scaleX }
-    private var scaleY: CGFloat { return config.scaleY }
-    private var rotate: CGFloat { return config.rotate }
-    private var opacity: CGFloat { return config.opacity }
-    private var animateFrom: Bool { return config.animateFrom }
-    private var curve: Animation.Curve { return config.curve }
+    private var animation: Animation.Preset { config.animation}
+    private var force: CGFloat { config.force }
+    private var delay: TimeInterval { config.delay }
+    private var duration: TimeInterval { config.duration }
+    private var damping: CGFloat { config.damping }
+    private var velocity: CGFloat { config.velocity }
+    private var repeatCount: Float { config.repeatCount }
+    private var x: CGFloat { config.x }
+    private var y: CGFloat { config.y }
+    private var scaleX: CGFloat { config.scaleX }
+    private var scaleY: CGFloat { config.scaleY }
+    private var rotate: CGFloat { config.rotate }
+    private var opacity: CGFloat { config.opacity }
+    private var animateFrom: Bool { config.animateFrom }
+    private var curve: Animation.Curve { config.curve }
     
     // UIView
-    private var layer: CALayer { return view.layer }
+    private var layer: CALayer { view.layer }
     private var transform: CGAffineTransform {
-        get { return view.transform }
+        get { view.transform }
         set { view.transform = newValue }
     }
     private var alpha: CGFloat {
-        get { return view.alpha }
+        get { view.alpha }
         set { view.alpha = newValue }
     }
 }

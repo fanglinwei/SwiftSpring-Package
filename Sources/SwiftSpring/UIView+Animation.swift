@@ -17,7 +17,7 @@ public extension Wrapper where Base: UIView {
         return self
     }
     @discardableResult
-    func delay(_ delay: CGFloat) -> Wrapper {
+    func delay(_ delay: TimeInterval) -> Wrapper {
         config.delay = delay
         return self
     }
