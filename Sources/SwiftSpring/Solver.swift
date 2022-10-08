@@ -153,6 +153,18 @@ extension Solver {
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
             layer.add(animation, forKey: "shake")
             
+        case .jump:
+            let animation = CAKeyframeAnimation()
+            animation.keyPath = "position.y"
+            animation.values = [0, -40 * force, 0, -20 * force, 0]
+            animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+            animation.timingFunction = curve.timingFunction
+            animation.duration = duration
+            animation.isAdditive = true
+            animation.repeatCount = repeatCount
+            animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+            layer.add(animation, forKey: "jump")
+            
         case .pop:
             let animation = CAKeyframeAnimation()
             animation.keyPath = "transform.scale"
