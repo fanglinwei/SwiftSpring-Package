@@ -29,7 +29,7 @@ public extension Animation {
         
         case fall
         case shake
-        case jump
+        case bounce
         case pop
         case morph
         case squeeze

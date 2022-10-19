@@ -153,7 +153,7 @@ extension Solver {
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
             layer.add(animation, forKey: "shake")
             
-        case .jump:
+        case .bounce:
             let animation = CAKeyframeAnimation()
             animation.keyPath = "position.y"
             animation.values = [0, -40 * force, 0, -20 * force, 0]
@@ -163,7 +163,7 @@ extension Solver {
             animation.isAdditive = true
             animation.repeatCount = repeatCount
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-            layer.add(animation, forKey: "jump")
+            layer.add(animation, forKey: "bounce")
             
         case .pop:
             let animation = CAKeyframeAnimation()
