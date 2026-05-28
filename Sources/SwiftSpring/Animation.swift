@@ -30,6 +30,7 @@ public extension Animation {
         case fall
         case shake
         case bounce
+        case jump
         case pop
         case morph
         case squeeze

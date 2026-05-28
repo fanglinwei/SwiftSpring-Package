@@ -165,6 +165,28 @@ extension Solver {
             animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
             layer.add(animation, forKey: "bounce")
             
+        case .jump:
+            let jumpY = CAKeyframeAnimation()
+            jumpY.keyPath = "transform.translation.y"
+            jumpY.values = [0, -60 * force, -12 * force, 0]
+            jumpY.keyTimes = [0, 0.4, 0.65, 1]
+            jumpY.timingFunction = curve.timingFunction
+            jumpY.duration = duration
+            jumpY.isAdditive = true
+            jumpY.repeatCount = repeatCount
+            jumpY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+            layer.add(jumpY, forKey: "jumpY")
+            
+            let jumpScale = CAKeyframeAnimation()
+            jumpScale.keyPath = "transform.scale.y"
+            jumpScale.values = [1, 0.88, 1.06, 1]
+            jumpScale.keyTimes = [0, 0.2, 0.45, 1]
+            jumpScale.timingFunction = curve.timingFunction
+            jumpScale.duration = duration
+            jumpScale.repeatCount = repeatCount
+            jumpScale.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+            layer.add(jumpScale, forKey: "jumpScale")
+            
         case .pop:
             let animation = CAKeyframeAnimation()
             animation.keyPath = "transform.scale"
