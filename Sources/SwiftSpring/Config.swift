@@ -6,8 +6,8 @@
 //  Copyright © 2019 calm. All rights reserved.
 //
 
-#if canImport(UIKit)
-import UIKit
+import CoreGraphics
+import Foundation
 
 public class Config {
     public var animation: Animation.Preset = .none
@@ -46,5 +46,3 @@ public class Config {
         animateFrom = config.animateFrom
     }
 }
-
-#endif

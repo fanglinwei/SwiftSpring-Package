@@ -31,6 +31,7 @@
 - [x] Lightweight expansion.
 - [x] Based on UIViewAnimation.
 - [x] No code intrusion.
+- [x] SwiftUI support.
 
 
 ## Install
@@ -69,7 +70,7 @@ Here are some usage examples. All devices are also available as simulators:
 
 ## API
 
-### Chaining
+### UIKit Chaining
 
 ```swift
  animationView.spring
@@ -78,6 +79,21 @@ Here are some usage examples. All devices are also available as simulators:
   .duration(2)
   .curve(.easeOutQuad)
   .animate()
+```
+
+### SwiftUI
+
+SwiftUI support is available on iOS 13.0+.
+
+```swift
+@State private var trigger = false
+
+Text("SwiftSpring")
+    .spring(
+        .pop,
+        trigger: trigger,
+        configuration: SpringConfiguration(duration: 0.7, force: 1)
+    )
 ```
 
 ### Functions

@@ -1,8 +1,9 @@
 import XCTest
+@testable import SwiftSpring
 
 #if canImport(UIKit)
 import UIKit
-@testable import SwiftSpring
+#endif
 
 final class SwiftSpringTests: XCTestCase {
     func testConfigUsesDocumentedDefaults() {
@@ -25,6 +26,7 @@ final class SwiftSpringTests: XCTestCase {
         XCTAssertTrue(config.animateFrom)
     }
 
+    #if canImport(UIKit)
     func testSetConfigPersistsForUIViewWrapper() {
         let view = UIView()
 
@@ -49,19 +51,9 @@ final class SwiftSpringTests: XCTestCase {
             XCTAssertEqual(config.y, -8)
         }
     }
+    #endif
 
     static var allTests = [
         ("testConfigUsesDocumentedDefaults", testConfigUsesDocumentedDefaults),
-        ("testSetConfigPersistsForUIViewWrapper", testSetConfigPersistsForUIViewWrapper),
-        ("testPointUpdatesTranslationConfig", testPointUpdatesTranslationConfig),
     ]
 }
-#else
-final class SwiftSpringTests: XCTestCase {
-    func testUIKitIsRequiredForSwiftSpringAPI() {
-        XCTAssertFalse(_canImportUIKit)
-    }
-}
-
-private let _canImportUIKit = false
-#endif
