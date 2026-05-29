@@ -85,6 +85,8 @@ animate() { ... }
 ### 动画类型
 ```swift
 shake
+bounce
+jump
 pop
 morph
 squeeze
@@ -159,4 +161,3 @@ alpha
 ## 协议
 
 Spring 使用 MIT 协议. 有关更多信息，请参阅 [LICENSE](LICENSE) 文件.
-

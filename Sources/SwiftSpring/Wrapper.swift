@@ -6,6 +6,7 @@
 //  Copyright © 2019 calm. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public struct Wrapper<Base> {
@@ -25,3 +26,5 @@ public extension AnimationCompatible {
 }
 
 extension UIView: AnimationCompatible {}
+
+#endif

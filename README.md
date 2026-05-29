@@ -90,6 +90,8 @@ animate() { ... }
 
 ```swift
 shake
+bounce
+jump
 pop
 morph
 squeeze
@@ -165,4 +167,3 @@ If you extended the functionality of Spring yourself and want others to use it t
 ## License
 
 Spring is under MIT license. See the [LICENSE](LICENSE) file for more info.
-

@@ -6,9 +6,10 @@
 //  Copyright © 2019 calm. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
-public enum Animation {
+public enum Animation: Equatable {
     case normal
     case curveEaseIn
     case curveEaseOut
@@ -19,7 +20,7 @@ public enum Animation {
 
 public extension Animation {
     
-    enum Preset {
+    enum Preset: Equatable {
         case slideLeft, slideRight, slideDown, slideUp
         case squeezeLeft, squeezeRight, squeezeDown, squeezeUp
         case fadeInLeft, fadeInRight, fadeInDown, fadeInUp
@@ -40,7 +41,7 @@ public extension Animation {
         case none
     }
     
-    enum Curve {
+    enum Curve: Equatable {
         case linear
         case discrete
         case easeIn, easeOut, easeInOut
@@ -179,3 +180,4 @@ private extension Animation {
     }
 }
 
+#endif

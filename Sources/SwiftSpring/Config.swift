@@ -6,6 +6,7 @@
 //  Copyright © 2019 calm. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public class Config {
@@ -26,4 +27,24 @@ public class Config {
     public var animateFrom: Bool = true
     
     public init() {}
+
+    init(copying config: Config) {
+        animation = config.animation
+        curve = config.curve
+        force = config.force
+        delay = config.delay
+        duration = config.duration
+        damping = config.damping
+        velocity = config.velocity
+        repeatCount = config.repeatCount
+        x = config.x
+        y = config.y
+        scaleX = config.scaleX
+        scaleY = config.scaleY
+        rotate = config.rotate
+        opacity = config.opacity
+        animateFrom = config.animateFrom
+    }
 }
+
+#endif

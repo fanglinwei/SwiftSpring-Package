@@ -6,6 +6,7 @@
 //  Copyright © 2019 calm. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 // MARK: - 链式属性
@@ -42,7 +43,7 @@ public extension Wrapper where Base: UIView {
         return self
     }
     @discardableResult
-    func potint(_ x: CGFloat, _ y: CGFloat) -> Wrapper {
+    func point(_ x: CGFloat, _ y: CGFloat) -> Wrapper {
         config.x = x
         config.y = y
         return self
@@ -119,3 +120,5 @@ extension Wrapper where Base: UIView {
         return solver
     }
 }
+
+#endif

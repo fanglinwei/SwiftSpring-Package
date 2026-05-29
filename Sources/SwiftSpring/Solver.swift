@@ -6,6 +6,7 @@
 //  Copyright © 2019 calm. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 class Solver: NSObject {
@@ -23,8 +24,12 @@ class Solver: NSObject {
 extension Solver {
     
     func animate(completion: (() -> Void)? = .none) {
-        animatePreset()
-        set(view: completion)
+        let runtimeSolver = Solver(Config(copying: config), view)
+        runtimeSolver.animatePreset()
+        runtimeSolver.set { [weak self] in
+            self?.resetAll()
+            completion?()
+        }
     }
 }
 
@@ -204,7 +209,8 @@ extension Solver {
             config.scaleX = 1
             config.scaleY = 1
             var perspective = CATransform3DIdentity
-            perspective.m34 = -1.0 / layer.frame.size.width/2
+            let width = max(layer.bounds.width, 1)
+            perspective.m34 = -1.0 / (width * 2)
             
             let animation = CABasicAnimation()
             animation.keyPath = "transform"
@@ -219,7 +225,8 @@ extension Solver {
             
         case .flipY:
             var perspective = CATransform3DIdentity
-            perspective.m34 = -1.0 / layer.frame.size.width / 2
+            let width = max(layer.bounds.width, 1)
+            perspective.m34 = -1.0 / (width * 2)
             
             let animation = CABasicAnimation()
             animation.keyPath = "transform"
@@ -323,7 +330,7 @@ extension Solver {
         }
     }
     
-    private func set(view completion: (() -> Void)?) {
+    private func set(_ completion: (() -> Void)?) {
         
         func transformAnimate() {
             let translate = CGAffineTransform(translationX: x, y: y)
@@ -392,3 +399,5 @@ extension Solver {
         config.animateFrom = true
     }
 }
+
+#endif
